@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Fi1a\EventDispatcher;
 
 /**
- * Класс реализующий систему событий
+ * Реализует систему событий
  */
 interface EventDispatcherInterface
 {
@@ -17,7 +17,7 @@ interface EventDispatcherInterface
     /**
      * Вовзращает подписанные обработчики на событие
      *
-     * @return array<string, array<array-key, callable>>
+     * @return array<array-key, callable>
      */
     public function getListeners(string $eventName): array;
 
@@ -29,7 +29,7 @@ interface EventDispatcherInterface
     /**
      * Вовзращает подписанные обработчики
      *
-     * @return array<array-key, callable>
+     * @return array<string, array<int, array<array-key, callable>>>
      */
     public function listListeners(): array;
 
