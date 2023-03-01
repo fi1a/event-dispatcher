@@ -152,9 +152,7 @@ class EventDispatcher implements EventDispatcherInterface
     {
         foreach ($subscriber->getListeners() as $eventName => $params) {
             if (isset($params['listener'])) {
-                $this->removeListener($eventName, [$subscriber, $params['listener']]);
-
-                continue;
+                $params = [$params];
             }
             foreach ($params as $param) {
                 if (isset($param['listener'])) {
